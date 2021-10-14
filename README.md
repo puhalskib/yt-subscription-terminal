@@ -41,3 +41,13 @@ optional arguments:
                         look for specified format (default: 720)
   --load, -l            load from saved subscription videos (no fetching)
 ```
+
+## Config
+
+If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 15). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4).
+
+## TODO
+
+- add audio only
+- add format selector on video (like fzf)
+- add thumbnail viewer
