@@ -8,7 +8,7 @@ import os
 import argparse
 
 THREADNUM = 15
-
+CHANNEL_VIDEO_NUM = 4
 
 class Vod:
     def __init__(self, entrie):
@@ -54,7 +54,7 @@ if args.load == False:
         for x in progressbar(url_section):
             d = feedparser.parse(x)
             try:
-                for y in range(4):
+                for y in range(CHANNEL_VIDEO_NUM):
                     v1 = Vod(d.entries[y])
                     vods.append(v1)
             except IndexError as e:
