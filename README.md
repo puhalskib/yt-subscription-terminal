@@ -9,6 +9,7 @@ I don't wanna use youtube because im addicted and [ytfzf](https://github.com/pys
 ## Installation
 ```
 pip install feedparser pyfzf progressbar progressbar2
+git clone https://github.com/puhalskib/yt-subscription-terminal
 ```
 ## Dependecies
 - [fzf](https://github.com/junegunn/fzf)
