@@ -2,9 +2,9 @@
 a youtube subscription rss feed fetch.
 I don't wanna use youtube because im addicted and [ytfzf](https://github.com/pystardust/ytfzf) doesn't work for my 900 subscriptions
 
-<img title="usage="usage" src="./shot1.jpg">
+![usage](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot1.jpg)
 
-<img title="usage="fzf" src="./shot2.jpg">
+![fzf view](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot2.jpg)
 
 ## Installation
 ```
