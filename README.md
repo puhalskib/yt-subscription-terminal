@@ -19,6 +19,12 @@ pip install feedparser pyfzf progressbar progressbar2
 all must be available to the path
 
 ## Usage
+
+- gather subscriptions using [google takeout](https://takeout.google.com/)
+- channels must be in the form "https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID_HERE"
+- for example: https://www.youtube.com/feeds/videos.xml?channel_id=UCsrdm4f-MU1mEZbcXwqDjLg
+- put links in a urls.txt file in the same folder as the script and seperate them with a new line
+
 ```
 python3 main.py
 ```

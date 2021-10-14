@@ -43,7 +43,7 @@ args = parser.parse_args()
 vods = []
 if args.load == False:
     url_array = []
-    with open('urls2.txt') as url_file:
+    with open('urls.txt') as url_file:
         url_array = url_file.read().splitlines()
 
     # split the array into arrays of 100 length each
