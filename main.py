@@ -55,7 +55,7 @@ if args.load == False:
             d = feedparser.parse(x)
             try:
                 for y in range(CHANNEL_VIDEO_NUM):
-                    v1 = Vod(d.entrys[y])
+                    v1 = Vod(d.entries[y])
                     vods.append(v1)
             except IndexError as e:
                 pass
