@@ -44,10 +44,13 @@ optional arguments:
 
 ## Config
 
-If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 15). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4).
+If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times.
 
 ## TODO
 
-- add audio only
-- add format selector on video (like fzf)
-- add thumbnail viewer
+- audio only
+- format selector on video (like ytfzf)
+- thumbnail viewer (again like ytfzf)
+- script (or optional flag) to automatically import subsrciptions from the google takeout
+- toggle to keep track of history
+- have some indicator that a video has been watched if history is enabled

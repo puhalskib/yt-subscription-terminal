@@ -7,7 +7,7 @@ from pyfzf.pyfzf import FzfPrompt
 import os
 import argparse
 
-THREADNUM = 15
+THREADNUM = 12
 CHANNEL_VIDEO_NUM = 4
 
 class Vod:
@@ -102,11 +102,11 @@ fzf = FzfPrompt()
 chosen = fzf.prompt(sub_vods)
 chosen = chosen[0]
 chosen = chosen[-11:]
-print('playing ', chosen)
+print('Opening Player: https://www.youtube.com/watch?v=' + chosen)
 
 #
 # Play video
 #
 
-os.system('mpv "--ytdl-format=best[height<=?' +
-          str(args.format) + ']" ' + get_video(chosen))
+os.system('mpv "--ytdl-format=bestvideo[height<=?' +
+          str(args.format) + '][vcodec!=?vp9]+bestaudio/best" ' + get_video(chosen))
