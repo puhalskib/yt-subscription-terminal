@@ -11,13 +11,13 @@ THREADNUM = 12
 CHANNEL_VIDEO_NUM = 4
 
 class Vod:
-    def __init__(self, entrie):
-        self.views = entrie.media_statistics['views']
-        self.title = entrie.title
-        self.channel = entrie.author
-        self.videoid = entrie.yt_videoid
-        self.published = entrie.published
-        self.thumbnail = entrie.media_thumbnail[0]['url']
+    def __init__(self, entry):
+        self.views = entry.media_statistics['views']
+        self.title = entry.title
+        self.channel = entry.author
+        self.videoid = entry.yt_videoid
+        self.published = entry.published
+        self.thumbnail = entry.media_thumbnail[0]['url']
 
 
 def get_video(s: str):
@@ -55,7 +55,7 @@ if args.load == False:
             d = feedparser.parse(x)
             try:
                 for y in range(CHANNEL_VIDEO_NUM):
-                    v1 = Vod(d.entries[y])
+                    v1 = Vod(d.entrys[y])
                     vods.append(v1)
             except IndexError as e:
                 pass
