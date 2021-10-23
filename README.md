@@ -18,7 +18,6 @@ git clone https://github.com/puhalskib/yt-subscription-terminal
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - python3.something
 
-all must be available to the path
 
 ## Usage
 
