@@ -5,7 +5,7 @@ I don't wanna use youtube because I'm addicted to the algorithm and [ytfzf](http
 
 ![usage](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot1.jpg)
 
-![fzf view](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot2.jpg)
+![fzf view](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot3.png)
 
 ## Installation
 ```
