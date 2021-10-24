@@ -17,6 +17,7 @@ git clone https://github.com/puhalskib/yt-subscription-terminal
 - [mpv](https://mpv.io/)
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - python3.something
+- pip
 
 
 ## Usage
@@ -27,10 +28,10 @@ git clone https://github.com/puhalskib/yt-subscription-terminal
 - put links in a urls.txt file in the same folder as the script and seperate them with a new line
 
 ```
-python3 main.py
+python3 sub_term.py
 ```
 ```
-usage: main.py [-h] [--format FORMAT] [--load]
+usage: sub_term.py [-h] [--format FORMAT] [--load]
 
 Fetch youtube subscription and watch videos
 
@@ -43,13 +44,12 @@ optional arguments:
 
 ## Config
 
-If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times.
+If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails in preview.py
 
 ## TODO
 
 - audio only
 - format selector on video (like ytfzf)
-- thumbnail viewer (again like ytfzf)
 - script (or optional flag) to automatically import subsrciptions from the google takeout
 - toggle to keep track of history
 - have some indicator that a video has been watched if history is enabled
