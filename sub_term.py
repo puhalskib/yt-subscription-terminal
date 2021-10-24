@@ -40,7 +40,8 @@ class Vod:
 
 
 THREADNUM = 12
-CHANNEL_VIDEO_NUM = 4
+CHANNEL_VIDEO_NUM = 6
+THUMBNAILS = False
 
 
 def get_video(s: str):
@@ -100,6 +101,9 @@ if __name__ == "__main__":
 
         print('sorting...')
         vods.sort(reverse=True, key=getTime)
+
+        # clear sub cache
+        os.system('rm -rf ' + path + '/sub_cache/*')
 
         #
         # Save videos to files

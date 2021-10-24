@@ -4,43 +4,9 @@ import shutil
 import pickle
 import os
 import sys
-
-THUMBNAILS = False
-
-
-def get_month(m):
-    switch = {
-        1: "Jan",
-        2: "Feb",
-        3: "March",
-        4: "Apr",
-        5: "May",
-        6: "June",
-        7: "July",
-        8: "Aug",
-        9: "Sept",
-        10: "Oct",
-        11: "Nov",
-        12: "Dec",
-    }
-    return switch.get(m)
-
-
-class Vod:
-    def __init__(self, entry):
-        self.views = entry.media_statistics['views']
-        self.title = entry.title
-        self.channel = entry.author
-        self.videoid = entry.yt_videoid
-        self.upload = f"{get_month(entry.published_parsed.tm_mon)} {entry.published_parsed.tm_mday}, {entry.published_parsed.tm_year}"
-        self.description = entry.summary
-        self.likes = float(entry.media_starrating['average']) * 20
-        self.published = entry.published
-
-
-def get_video(s: str):
-    return ("https://www.youtube.com/watch?v=" + s)
-
+from sub_term import Vod
+from sub_term import THUMBNAILS
+from sub_term import get_video
 
 path = os.path.dirname(sys.argv[0])
 
@@ -69,11 +35,11 @@ print("\033[1;31m" + vid.title + "\033[0m" +
       '\n' + vid.views + ' views'+" "*(15-len(vid.views)), end=" ")
 try:
     if(round(vid.likes, 2) < 80):
-        print('\033[7;31m'+str(round(vid.likes, 2))+'%\033[0m')
+        print('\033[7;31m'+str(round(vid.likes, 2))+'%\033[0m\t' + vid.upload)
     elif(round(vid.likes, 2) < 95):
-        print('\033[1;33m'+str(round(vid.likes, 2))+'%\033[0m')
+        print('\033[1;33m'+str(round(vid.likes, 2))+'%\033[0m\t' + vid.upload)
     else:
-        print('\033[;32m'+str(round(vid.likes, 2))+'%\033[0m')
+        print('\033[;32m'+str(round(vid.likes, 2))+'%\033[0m\t' + vid.upload)
 except AttributeError as a:
     print('could not get likes')
 

@@ -19,6 +19,10 @@ git clone https://github.com/puhalskib/yt-subscription-terminal
 - python3.something
 - pip
 
+**recommended**
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+youtube-dl is not currently updated and yt-dlp should be used to get download speeds above 50kb/s with mpv
 
 ## Usage
 
@@ -44,7 +48,7 @@ optional arguments:
 
 ## Config
 
-If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails in preview.py
+If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails.
 
 ## TODO
 
