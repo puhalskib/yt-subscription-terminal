@@ -61,10 +61,16 @@ if __name__ == "__main__":
                         help='load from saved subscription videos (no fetching)')
     args = parser.parse_args()
 
+    
+
     #
     # Fetch youtube videos
     #
     path = os.path.dirname(sys.argv[0])
+
+    if(path == ""):
+        path = "./"
+
 
     vods = []
     if args.load == False:
