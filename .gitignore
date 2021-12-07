@@ -1,5 +1,4 @@
-urls.txt
-subs
 cache/
-sub_cache/
 __pycache__/
+focus/
+focus.txt

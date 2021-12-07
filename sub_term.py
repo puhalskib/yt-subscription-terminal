@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import feedparser
 from threading import Thread
 from progressbar import progressbar
@@ -13,13 +15,13 @@ def get_month(m):
     switch = {
         1: "Jan",
         2: "Feb",
-        3: "March",
+        3: "Mar",
         4: "Apr",
         5: "May",
-        6: "June",
-        7: "July",
+        6: "Jun",
+        7: "Jul",
         8: "Aug",
-        9: "Sept",
+        9: "Sep",
         10: "Oct",
         11: "Nov",
         12: "Dec",
@@ -40,7 +42,7 @@ class Vod:
 
 
 THREADNUM = 12
-CHANNEL_VIDEO_NUM = 6
+CHANNEL_VIDEO_NUM = 15
 THUMBNAILS = False
 
 
@@ -59,8 +61,10 @@ if __name__ == "__main__":
                         help='look for specified format (default: 720)')
     parser.add_argument('--load', '-l', action='store_true',
                         help='load from saved subscription videos (no fetching)')
+    parser.add_argument('--profile', '-p', type=str, default='def',
+            help='fetch videos only from a certain profile (default: def)')
     args = parser.parse_args()
-
+    
     #
     # Fetch youtube videos
     #
@@ -69,7 +73,7 @@ if __name__ == "__main__":
     vods = []
     if args.load == False:
         url_array = []
-        with open(path+'/urls.txt') as url_file:
+        with open(path+'/'+args.profile+'.txt') as url_file:
             url_array = url_file.read().splitlines()
 
         # split the array into arrays of 100 length each
@@ -102,22 +106,26 @@ if __name__ == "__main__":
         print('sorting...')
         vods.sort(reverse=True, key=getTime)
 
+        # check if sub cache exists
+        if not os.path.exists(args.profile):
+            os.makedirs(args.profile)
+
         # clear sub cache
-        os.system('rm -rf ' + path + '/sub_cache/*')
+        os.system('rm -rf ' + path + '/'+args.profile+'/*')
 
         #
         # Save videos to files
         #
         for z in vods:
-            with open(path+'/sub_cache/'+z.videoid, 'wb') as f:
+            with open(path+'/'+args.profile+'/'+z.videoid, 'wb') as f:
                 pickle.dump(z, f)
 
     else:
         #
         # Load videos from files
         #
-        for filename in os.listdir(path+'/sub_cache'):
-            with open(path+'/sub_cache/'+filename, 'rb') as f:
+        for filename in os.listdir(path+'/'+args.profile):
+            with open(path+'/'+args.profile+'/'+filename, 'rb') as f:
                 vods.append(pickle.load(f))
 
         def getTime(e):
@@ -141,7 +149,7 @@ if __name__ == "__main__":
 
     fzf = FzfPrompt()
     chosen = fzf.prompt(
-        sub_vods, '--preview "python3 ' + path + '/preview.py {}" --preview-window="left:40%:noborder:wrap"')
+        sub_vods, '--preview "python3 ' + path + '/preview.py -p '+args.profile+' -v {}" --preview-window="left:40%:noborder:wrap"')
     chosen = chosen[0]
     chosen = chosen[-11:]
     print('Opening Player: https://www.youtube.com/watch?v=' + chosen)

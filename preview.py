@@ -11,13 +11,13 @@ from sub_term import get_video
 path = os.path.dirname(sys.argv[0])
 
 parser = argparse.ArgumentParser()
-parser.add_argument('arg')
-
+parser.add_argument('--profile', '-p', type=str, default='def')
+parser.add_argument('--video', '-v', type=str)
 args = parser.parse_args()
 
-s = args.arg[-11:]
+s = args.video[-11:]
 
-with open(path+'/sub_cache/' + s, 'rb') as v:
+with open(path+'/'+args.profile+'/' + s, 'rb') as v:
     vid = pickle.load(v)
 
 if(THUMBNAILS and os.path.exists(path+'/cache/'+s+'.jpg') == False):
