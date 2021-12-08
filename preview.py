@@ -20,6 +20,10 @@ s = args.video[-11:]
 with open(path+'/'+args.profile+'/' + s, 'rb') as v:
     vid = pickle.load(v)
 
+# create cache directory for thumbnails
+if ((not os.path.exists(path+'/cache')) and THUMBNAILS):
+    os.makedirs(path+'/cache')
+
 if(THUMBNAILS and os.path.exists(path+'/cache/'+s+'.jpg') == False):
     image_url = "https://img.youtube.com/vi/" + s + "/0.jpg"
     filename = path+'/cache/' + image_url.split("/")[-2] + '.jpg'

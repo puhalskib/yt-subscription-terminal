@@ -65,6 +65,10 @@ if __name__ == "__main__":
             help='fetch videos only from a certain profile (default: def)')
     args = parser.parse_args()
     
+    #catch error
+    if (args.profile == 'cache' or args.profile == ''):
+        raise Exception('Invalid profile name')
+
     #
     # Fetch youtube videos
     #
@@ -107,8 +111,8 @@ if __name__ == "__main__":
         vods.sort(reverse=True, key=getTime)
 
         # check if sub cache exists
-        if not os.path.exists(args.profile):
-            os.makedirs(args.profile)
+        if not os.path.exists(path+'/'+args.profile):
+            os.makedirs(path+'/'+args.profile)
 
         # clear sub cache
         os.system('rm -rf ' + path + '/'+args.profile+'/*')
