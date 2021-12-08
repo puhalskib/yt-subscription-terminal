@@ -1,7 +1,7 @@
 # YT Subscription Terminal
 A youtube subscription rss feed fetch.
 
-I don't wanna use youtube because I'm addicted to the algorithm and [ytfzf](https://github.com/pystardust/ytfzf) doesn't work for my 900+ subscriptions
+I don't wanna use youtube because I'm addicted to the algorithm and [ytfzf](https://github.com/pystardust/ytfzf) doesn't work for my 900+ subscriptions.
 
 ![usage](https://github.com/puhalskib/yt-subscription-terminal/blob/master/shot1.jpg)
 
