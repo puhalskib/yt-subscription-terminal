@@ -48,7 +48,7 @@ optional arguments:
                         fetch videos only from a certain profile (default: def)
 ```
 
-Add an alias for the script for often usage.
+Add an alias in your bashrc for frequent usage.
 
 ```bash
 alias yts="/home/ben/scripts/yt-subscription-terminal/sub_term.py"
