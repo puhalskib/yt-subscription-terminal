@@ -69,10 +69,16 @@ if __name__ == "__main__":
     if (args.profile == 'cache' or args.profile == ''):
         raise Exception('Invalid profile name')
 
+    
+
     #
     # Fetch youtube videos
     #
     path = os.path.dirname(sys.argv[0])
+
+    if(path == ""):
+        path = "./"
+
 
     vods = []
     if args.load == False:
