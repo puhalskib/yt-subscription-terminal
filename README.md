@@ -11,7 +11,6 @@ I don't wanna use youtube because I'm addicted to the algorithm and [ytfzf](http
 ```
 pip install feedparser pyfzf progressbar progressbar2
 git clone https://github.com/puhalskib/yt-subscription-terminal
-chmod +x sub_term.py
 ```
 ## Dependecies
 - [fzf](https://github.com/junegunn/fzf)
@@ -49,15 +48,22 @@ optional arguments:
                         fetch videos only from a certain profile (default: def)
 ```
 
+Add an alias for the script for often usage.
+
+```bash
+alias yts="/home/ben/Public/yt-term/sub_term.py"
+```
+
 ## Config
 
-If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 4, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails.
+If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 15, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails.
 
 Add profiles by creating a new profile.txt (aaa.txt, abc.txt, etc...) with the urls for that profile. Use the profile with "-p PROFILE_NAME".
 
 ## TODO
 
 - audio only
-- script (or optional flag) to automatically import subscriptions from the google takeout
+- script to automatically import subscriptions from google takeout
 - toggle to keep track of history
 - have some indicator that a video has been watched if history is enabled
+
