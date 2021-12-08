@@ -51,14 +51,14 @@ optional arguments:
 Add an alias for the script for often usage.
 
 ```bash
-alias yts="/home/ben/Public/yt-term/sub_term.py"
+alias yts="/home/ben/scripts/yt-subscription-terminal/sub_term.py"
 ```
 
 ## Config
 
 If you wan't to change the number of threads the script uses to get better performance, change the THREADNUM variable at the top of the script (defaut 12). For the number of videos gathered per channel change CHANNEL_VIDEO_NUM (defaut 15, max 15). This will not make the fetching take longer, will only effect the subs file size and read and write times. Change THUMBNAIL to True to load thumbnails.
 
-Add profiles by creating a new profile.txt (aaa.txt, abc.txt, etc...) with the urls for that profile. Use the profile with "-p PROFILE_NAME".
+Add profiles by creating a new profile.txt (abc.txt, quality.txt, etc...) with the urls for that profile. Use the profile with "-p PROFILE_NAME".
 
 ## TODO
 
